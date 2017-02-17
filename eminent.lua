@@ -69,7 +69,6 @@ local function gettags(screen)
 end
 
 awful.tag.viewidx = function (i, screen)
-    local screen
     if type(ascreen.focused) == "function" then 
         screen = screen or ascreen.focused() 
     else
