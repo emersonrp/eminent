@@ -7,7 +7,7 @@
 ----------------------------------------------------------------
 -- To use this module add:
 --   require("eminent")
--- to the top of your rc.lua. 
+-- to the top of your rc.lua.
 --
 -- That's it. Through magical monkey-patching, all you need to
 -- do to start dynamic tagging is loading it.
@@ -42,7 +42,7 @@ eminent.create_new_tag = true
 -- simply change the behavior of the filter will do the trick
 awful.widget.taglist.filter.all = awful.widget.taglist.filter.noempty
 
--- However it still need to replace the original awful.tag.viewidx to only loop in the 
+-- However it still need to replace the original awful.tag.viewidx to only loop in the
 -- set of the non-empty tags
 --
 -- Return tags with stuff on them
@@ -69,10 +69,10 @@ local function gettags(screen)
 end
 
 awful.tag.viewidx = function (i, screen)
-    if type(ascreen.focused) == "function" then 
-        screen = screen or ascreen.focused() 
+    if type(ascreen.focused) == "function" then
+        screen = screen or ascreen.focused()
     else
-        screen =screen or capi.mouse.screen
+        screen = screen or capi.mouse.screen
     end
 
     local tags = gettags(screen)
@@ -91,7 +91,7 @@ awful.tag.viewidx = function (i, screen)
             table.insert(showntags, t)
         end
     end
-    local sel 
+    local sel
     if type(screen.selected_tag) == 'tag' then
         sel = screen.selected_tag
     else
